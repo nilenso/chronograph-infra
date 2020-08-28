@@ -28,3 +28,11 @@ Currently, these are transferred out of band. Once you have them, you should be 
      - Terraform >= 0.13 installed
 4. Run `terraform init` if this is the first time you're using this.
 5. Run `terraform plan` & `terraform apply` as necessary
+
+### Extra
+
+To see the database credentials:
+
+```
+terraform show  -json | jq '.values.root_module.resources | .[] | select(.address == "google_sql_user.chronograph_web") | .values'
+```
