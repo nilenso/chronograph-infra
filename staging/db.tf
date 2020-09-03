@@ -33,3 +33,7 @@ resource "google_sql_user" "chronograph_web" {
   password = random_password.db_password.result
 }
 
+resource "google_sql_database" "database" {
+  name     = var.sql_database_name
+  instance = google_sql_database_instance.db_instance.name
+}

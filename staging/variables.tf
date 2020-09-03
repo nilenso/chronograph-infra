@@ -18,3 +18,7 @@ variable "service_port_name" {
 variable "service_port" {
   default = 8000
 }
+
+variable "sql_database_name" {
+  default = "chronograph"
+}
